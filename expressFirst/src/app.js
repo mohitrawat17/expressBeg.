@@ -33,11 +33,23 @@ app.get("/about",(req,res)=>{
     res.send()
 })
 //---------------------------------------------------------
+// invalid route
+
+app.get("/about/*",(req,res)=>{
+    res.render("404",{
+        error :"about us page not found"
+    })
+})
 
 
+app.get("*",(req,res)=>{
+    res.render("404",{
+        error :"page not found"
+    })
+})
 
 
-
+//---------------------------------------------------------
 app.listen(port,()=>{
     console.log(`running on ${port}`);
 })
