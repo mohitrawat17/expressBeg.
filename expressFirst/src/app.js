@@ -32,6 +32,23 @@ app.get("/about",(req,res)=>{
     res.write("<h2>this is html</h2>")
     res.send()
 })
+
+
+//---------------------------------------------------------
+//query string
+
+
+app.get("/demo",(req,res)=>{
+    console.log(req.query);
+    console.log(req.query.city);
+    res.render("index",{
+      city : req.query.city,
+      country : req.query.country
+    })
+    })
+    
+
+
 //---------------------------------------------------------
 // invalid route
 
